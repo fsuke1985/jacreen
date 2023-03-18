@@ -6,7 +6,8 @@ apt-get install -y \
   gnupg2 \
   jq \
   sudo \
-  zsh
+  zsh \
+  golang
 
 # set-up and install yarn
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
