@@ -12,7 +12,8 @@
 				"GitHub.vscode-pull-request-github",
 				"donjayamanne.githistory",
 				"mhutchie.git-graph",
-				"waderyan.gitblame"
+				"waderyan.gitblame",
+				"golang.go"
 			],
 			"settings": { 
 				"go.toolsManagement.checkForUpdates": "local",
