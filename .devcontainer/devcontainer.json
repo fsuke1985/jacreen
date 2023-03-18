@@ -27,7 +27,7 @@
 	"service": "devcontainer",
 	"workspaceFolder": "/workspace",
 	"remoteUser": "vscode",
-	"forwardPorts": [27017, 8081],
+	"forwardPorts": [27017, 8080, 8081],
 	"portsAttributes": {
 		"27017": {
 			"label": "mongoDB",

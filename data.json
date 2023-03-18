@@ -1,0 +1,25 @@
+{
+    "error": {
+        "code": 403,
+        "message": "Requests to this API customsearch method google.customsearch.v1.CustomSearchService.List are blocked.",
+        "errors": [
+            {
+                "message": "Requests to this API customsearch method google.customsearch.v1.CustomSearchService.List are blocked.",
+                "domain": "global",
+                "reason": "forbidden"
+            }
+        ],
+        "status": "PERMISSION_DENIED",
+        "details": [
+            {
+                "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+                "reason": "API_KEY_SERVICE_BLOCKED",
+                "domain": "googleapis.com",
+                "metadata": {
+                    "consumer": "projects/758927254506",
+                    "service": "customsearch.googleapis.com"
+                }
+            }
+        ]
+    }
+}
