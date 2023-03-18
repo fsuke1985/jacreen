@@ -10,6 +10,8 @@ services:
     # Overrides default command so things don't shut down after the process ends.
     command: /bin/sh -c "while sleep 1000; do :; done"
     user: vscode
+    # networks: 
+    #   - internal
 
   mongo:
     image: mongo:latest
@@ -23,8 +25,8 @@ services:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
       MONGO_INITDB_DATABASE: mongo
-    networks:
-          - mongo-express
+    # networks:
+    #       - mongo-express
     # Add "forwardPorts": ["27017"] to **devcontainer.json** to forward MongoDB locally.
     # (Adding the "ports" property to this file will not forward from a Codespace.)
 
@@ -40,8 +42,8 @@ services:
       ME_CONFIG_MONGODB_SERVER: mongo
     depends_on:
       - mongo
-    networks:
-      - mongo-express
+    # networks:
+    #   - mongo-express
   
   apiserver:
     image: nginx
@@ -53,9 +55,13 @@ services:
     environment:
     - NGINX_HOST=foobar.com
     - NGINX_PORT=80
+    # networks: 
+    #   - internal
 
 volumes:
   mongodb-data:
-networks:
-  mongo-express:
-    driver: bridge
+# networks:
+#   mongo-express:
+#     driver: bridge
+#   internal:
+#     external: true

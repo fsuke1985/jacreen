@@ -4,29 +4,29 @@ import (
 	"fmt"
 	googleimage "github.com/fsuke1985/jacreen/core/types"
 	"encoding/json"
-	"io/ioutil"
+	io "io/ioutil"
 	"os"
-	"reflect"
+	"net/http"
 )
 
 func main() {
 	var x *googleimage.GoogleImage
-	var j googleimage.GoogleImage
 
-	raw, err := ioutil.ReadFile("../data.json")
+	res, err := http.Get("http://apiserver/api/endpoint/data.json")
+	if err != nil {
+		os.Exit(1)
+	}
+	defer res.Body.Close()
+
+	raw, err := io.ReadAll(res.Body)
 	if err != nil {
 		os.Exit(1)
 	}
 
 	json.Unmarshal(raw, &x)
 
-	kJson := reflect.TypeOf(j)
-	// vJson := reflect.ValueOf(x)
-
-	for i := 0; i < kJson.NumField(); i++ {
-		// f := kJson.Field(i)
-		v, b := kJson.FieldByName("Code")
-		
-		fmt.Println(v.Code)
+	for _, i := range x.Error.Errors {
+		fmt.Println(x.Error.Code)
+		fmt.Println(i.Message)
 	}
 }
