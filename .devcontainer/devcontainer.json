@@ -1,16 +1,38 @@
 {
     "name": "Codespaces Node.js Starter",
-    "extensions": [
-        "coenraads.bracket-pair-colorizer-2",
-        "cschleiden.vscode-github-actions",
-        "eamodio.gitlens",
-        "github.vscode-pull-request-github",
-        "ms-azuretools.vscode-docker",
-        "ms-vsliveshare.vsliveshare",
-        "vscode-icons-team.vscode-icons",
-        "visualstudioexptteam.vscodeintellicode"
-    ],
-    "dockerFile": "Dockerfile",
+	// Configure tool-specific properties.
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
+				"dbaeumer.vscode-eslint",
+				"mongodb.mongodb-vscode",
+				"golang.Go",
+				"GitHub.vscode-pull-request-github",
+				"donjayamanne.githistory",
+				"mhutchie.git-graph",
+				"waderyan.gitblame"
+			],
+			"settings": { 
+				"go.toolsManagement.checkForUpdates": "local",
+				"go.useLanguageServer": true,	
+				"go.gopath": "/go",
+				"go.goroot": "/usr/local/go"
+			}
+		}
+	},
+	"dockerComposeFile": "./docker-compose.yml",
+	"service": "devcontainer",
+	"workspaceFolder": "/workspace",
+	"remoteUser": "vscode",
+	"forwardPorts": [27017, 8081],
+	"portsAttributes": {
+		"27017": {
+			"label": "mongoDB",
+			"onAutoForward": "notify"
+		}
+	},
     "settings": {
         "terminal.integrated.shell.linux": "/usr/bin/zsh",
         "files.exclude": {
