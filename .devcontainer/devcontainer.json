@@ -15,7 +15,12 @@
 				"waderyan.gitblame",
 				"golang.go"
 			],
-			"settings": { 
+			"settings": {
+				"terminal.integrated.shell.linux": "/usr/bin/zsh",
+				"files.exclude": {
+					"**/CODE_OF_CONDUCT.md": true,
+					"**/LICENSE": true
+				},
 				"go.toolsManagement.checkForUpdates": "local",
 				"go.useLanguageServer": true,	
 				"go.gopath": "/go",
@@ -33,12 +38,5 @@
 			"label": "mongoDB",
 			"onAutoForward": "notify"
 		}
-	},
-    "settings": {
-        "terminal.integrated.shell.linux": "/usr/bin/zsh",
-        "files.exclude": {
-            "**/CODE_OF_CONDUCT.md": true,
-            "**/LICENSE": true
-        }
-    }
+	}
 }
