@@ -48,8 +48,8 @@ services:
   apiserver:
     image: nginx
     volumes:
-    - ../conf/nginx:/etc/nginx/conf.d:rw
-    - ../data:/var/www:rw
+    - ../configs/nginx:/etc/nginx/conf.d:rw
+    - ../web/json:/var/www:rw
     ports:
     - "8082:80"
     environment:
